@@ -11,15 +11,32 @@ Magpie 工具插件：让**任意 Agent** 通过**你自己的豆包账号**（�
 ## 安装
 
 ```sh
-magpie plugin add C:/Users/86158/Desktop/doubao-image-plugin   # 文件夹就地加载
-magpie plugin --json                                          # 确认无 plugin: 错误
+# 方式一：npm（推荐）
+magpie plugin add @zeppeli777/tools-doubao
+
+# 方式二：从 GitHub 本地克隆后文件夹就地加载
+git clone https://github.com/Zeppeli777/doubao-image-plugin.git
+magpie plugin add ./doubao-image-plugin
+
+magpie plugin --json   # 确认加载无 plugin: 错误
 ```
 
-装完后**新开的 Agent 会话**才能看到新工具。
+装完后**新开的 Agent 会话**才能看到新工具。工具名为 `doubao-image-plugin_generate_image`（npm 包安装时插件 id 取包名，为 `doubao_generate_image`）。
+
+## 登录（获取豆包登录态）
+
+任选其一：
+
+```sh
+magpie plugin login doubao-image-plugin   # 或 npm 安装后的插件 id
+node scripts/login.mjs                    # 本地克隆时；弹出二维码，手机豆包 App 扫码
+```
+
+弹出二维码 → 手机豆包 App 扫码并确认 → 登录态自动写入插件目录 `config.json`。
 
 ## 配置凭证（三选一）
 
-1. **扫码登录（推荐）**：`node scripts/login.mjs` —— 弹出二维码（终端 ASCII + 系统看图程序），用手机豆包 App 扫码确认，登录态自动写入 config.json。Magpie 内也可触发：`magpie plugin login doubao-image-plugin`
+1. **扫码登录**（见上节，推荐）
 2. **手动**：复制 `config.example.json` 为 `config.json`，填入 `sessionid`（浏览器登录 doubao.com → F12 → Application → Cookies → `https://www.doubao.com` → 复制 `sessionid`；`ttwid`、`passport_csrf_token` 可选，带上更稳）
 3. **环境变量**：`DOUBAO_ACCOUNTS="主号:sessionid=xxx,ttwid=yyy;小号:sessionid=zzz"`
 

@@ -1,18 +1,38 @@
 {
-  "name": "tools-doubao",
+  "name": "@zeppeli777/tools-doubao",
   "version": "0.1.0",
-  "description": "Doubao (豆包) image generation relay for Magpie: text-to-image and image-to-image with the user's own Doubao web session, served to every agent via /mcp/magpie/tools",
+  "description": "Doubao (豆包) image generation relay for Magpie: text-to-image and image-to-image with the user's own Doubao web session (QR-code sign-in), served to every agent via /mcp/magpie/tools",
   "type": "module",
   "main": "./index.mjs",
   "license": "MIT",
+  "author": "Zeppeli777",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zeppeli777/doubao-image-plugin.git"
+  },
+  "homepage": "https://github.com/Zeppeli777/doubao-image-plugin#readme",
+  "bugs": "https://github.com/Zeppeli777/doubao-image-plugin/issues",
+  "files": [
+    "index.mjs",
+    "src",
+    "scripts",
+    "config.example.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "magpie",
     "magpie-tools",
+    "magpie-plugin",
     "opencode-plugin",
     "mcp",
     "doubao",
     "seedream",
-    "image-generation"
+    "image-generation",
+    "text-to-image"
   ],
   "magpie": {
     "name": "豆包生图中转"
