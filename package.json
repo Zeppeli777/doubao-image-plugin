@@ -1,6 +1,6 @@
 {
   "name": "@zeppeli777/tools-doubao",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Doubao (豆包) image generation relay for Magpie: text-to-image and image-to-image with the user's own Doubao web session (QR-code sign-in), served to every agent via /mcp/magpie/tools",
   "type": "module",
   "main": "./index.mjs",

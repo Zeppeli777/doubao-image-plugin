@@ -172,6 +172,7 @@ export const DoubaoTools = async (input, options) => {
     // 弹出二维码图片 → 用户手机豆包 App 扫码确认 → 轮询拿到 sessionid 写入 config.json。
     auth: {
       provider: PLUGIN_ID,
+      single: true, // 账号由插件 config.json 管理，Magpie 侧只存一份登录态
       methods: [
         {
           type: "oauth",
@@ -200,5 +201,5 @@ export const DoubaoTools = async (input, options) => {
     },
   };
 };
-
-export default DoubaoTools;
+// 注意：这里不能再 export default —— Magpie 把"每个导出函数"都当作插件，
+// default 重复导出会让同一 provider id 注册两次，UI 会报"已登录但无法列出"。
