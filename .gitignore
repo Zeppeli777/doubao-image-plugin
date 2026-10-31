@@ -1,0 +1,12 @@
+# 真实凭证，绝不入库
+config.json
+
+# 本地输出与参考代码
+output/
+generated-images/
+reference/
+
+node_modules/
+
+# 编辑器/工作区本地配置
+.zcode/

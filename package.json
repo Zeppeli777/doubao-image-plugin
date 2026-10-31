@@ -1,0 +1,20 @@
+{
+  "name": "tools-doubao",
+  "version": "0.1.0",
+  "description": "Doubao (豆包) image generation relay for Magpie: text-to-image and image-to-image with the user's own Doubao web session, served to every agent via /mcp/magpie/tools",
+  "type": "module",
+  "main": "./index.mjs",
+  "license": "MIT",
+  "keywords": [
+    "magpie",
+    "magpie-tools",
+    "opencode-plugin",
+    "mcp",
+    "doubao",
+    "seedream",
+    "image-generation"
+  ],
+  "magpie": {
+    "name": "豆包生图中转"
+  }
+}
