@@ -1,6 +1,6 @@
 # 豆包生图中转插件（tools-doubao）
 
-Magpie 工具插件：让**任意 Agent** 通过**你自己的豆包账号**（网页版登录态，与豆包桌面端同账号同后端）生成图片。工具经 Magpie 内置 MCP 服务器 `/mcp/magpie/tools` 注册进所有智能体，工具名为 `doubao_generate_image` / `doubao_check_login`（以 `magpie plugin --json` 实际显示为准）。
+Magpie 工具插件：让**任意 Agent** 通过**你自己的豆包账号**（网页版登录态，与豆包桌面端同账号同后端）生成图片。工具经 Magpie 内置 MCP 服务器 `/mcp/magpie/tools` 注册进所有智能体，工具名为 `doubao-image-plugin_generate_image` / `doubao-image-plugin_check_login`。
 
 - **文生图**：prompt + 画幅比例（1:1 / 16:9 / 9:16 / 4:3 / 3:4 / auto）+ 模型档位（免费档 Seedream 5.0 Flash / 4.5 / 4.0）
 - **图生图**：传本地图片路径或图片 URL 作参考图
