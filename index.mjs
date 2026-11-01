@@ -190,7 +190,13 @@ export const DoubaoTools = async (input, options) => {
                   },
                 });
                 const file = writeAccountToConfig(result, "扫码登录");
-                return { type: "success", accountId: `豆包 · ${result.sessionid.slice(0, 6)}…`, configFile: file };
+                // magpie 的 save() 只持久化带 key/refresh 的结果；key = sessionid
+                return {
+                  type: "success",
+                  accountId: result.userName || (result.userId ? `豆包用户 ${result.userId}` : "豆包账号"),
+                  key: result.sessionid,
+                  metadata: { ttwid: result.ttwid || "", passport_csrf_token: result.passport_csrf_token || "", deviceId: result.deviceId || "", webId: result.webId || "", configFile: file },
+                };
               } catch (err) {
                 return { type: "failed", error: `豆包扫码登录失败：${err?.message || err}` };
               }
